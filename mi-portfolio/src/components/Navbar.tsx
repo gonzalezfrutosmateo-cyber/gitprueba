@@ -19,8 +19,8 @@ const GitHubIcon = () => (
 );
 
 const socialLinks = [
-  { label: "Instagram", href: "https://instagram.com/TU-USUARIO", icon: <InstagramIcon /> },
-  { label: "GitHub", href: "https://github.com/TU-USUARIO", icon: <GitHubIcon /> },
+  { label: "Instagram", href: "https://instagram.com/mate.frutos", icon: <InstagramIcon /> },
+  { label: "GitHub", href: "https://github.com/gonzalezfrutosmateo-cyber", icon: <GitHubIcon /> },
 ];
 
 export default function Navbar() {
@@ -43,7 +43,7 @@ export default function Navbar() {
       >
         <div className="px-4 sm:px-6 h-12 sm:h-14 flex items-center justify-between gap-2 sm:gap-6">
 
-          {/* Logo — Círculo verde */}
+          {/* home button */}
           <a
             href="/"
             aria-label="Home"
@@ -54,7 +54,7 @@ export default function Navbar() {
             </svg>
           </a>
 
-          {/* Nav Links — siempre visibles */}
+          {/* Nav Links */}
           <ul className="flex items-center gap-3 sm:gap-8 flex-1 justify-center">
             {navLinks.map((link) => (
               <li key={link.label}>
@@ -80,7 +80,7 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* Social Links — siempre visibles */}
+          {/* Social Links */}
           <div className="flex items-center gap-3 sm:gap-4 flex-shrink-0">
             {socialLinks.map((s) => (
               <a
@@ -91,7 +91,7 @@ export default function Navbar() {
                 aria-label={s.label}
                 className="text-white/40 hover:text-[#7B68EE] transition-all duration-300 hover:scale-110"
               >
-                {/* Íconos más chicos en mobile */}
+                
                 <span className="block scale-90 sm:scale-100">{s.icon}</span>
               </a>
             ))}
