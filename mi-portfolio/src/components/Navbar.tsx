@@ -36,25 +36,25 @@ export default function Navbar() {
   return (
     <div className="fixed top-0 left-0 w-full z-50 px-3 sm:px-4 pt-3 sm:pt-4">
       <nav
-        className={`bg-[#111111] rounded-xl transition-all duration-300 ${
+        className={`bg-[#191970] rounded-xl transition-all duration-300 ${
           scrolled ? "shadow-[0_4px_24px_rgba(0,0,0,0.6)]" : "shadow-[0_2px_12px_rgba(0,0,0,0.3)]"
         }`}
         style={{ border: "1px solid rgba(160,224,192,0.08)" }}
       >
         <div className="px-4 sm:px-6 h-12 sm:h-14 flex items-center justify-between gap-2 sm:gap-6">
 
-          {/* home button */}
+          {/* Logo — Círculo verde */}
           <a
             href="/"
             aria-label="Home"
-            className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#a0e0c0] flex items-center justify-center hover:scale-110 hover:bg-[#7dd4aa] transition-all duration-300 shadow-[0_0_12px_rgba(160,224,192,0.35)]"
+            className="flex-shrink-0 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#7B68EE] flex items-center justify-center hover:scale-110 hover:bg-[#6a58d6] transition-all duration-300 shadow-[0_0_12px_rgba(123,104,238,0.4)]"
           >
             <svg width="13" height="13" viewBox="0 0 24 24" fill="#111111">
               <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" />
             </svg>
           </a>
 
-          {/* Nav Links */}
+          {/* Nav Links — siempre visibles */}
           <ul className="flex items-center gap-3 sm:gap-8 flex-1 justify-center">
             {navLinks.map((link) => (
               <li key={link.label}>
@@ -63,14 +63,16 @@ export default function Navbar() {
                   onClick={() => setActive(link.label)}
                   className={`relative font-mono text-[10px] sm:text-sm tracking-wider sm:tracking-widest uppercase transition-all duration-300 group ${
                     active === link.label
-                      ? "text-[#a0e0c0]"
-                      : "text-white/50 hover:text-white/90"
+                      ? "text-[#7B68EE]"
+                      : "text-white/50 hover:text-[#7B68EE]"
                   }`}
                 >
                   {link.label}
                   <span
-                    className={`absolute -bottom-1 left-0 h-px bg-[#a0e0c0] transition-all duration-300 ${
-                      active === link.label ? "w-full" : "w-0 group-hover:w-full"
+                    className={`absolute -bottom-1 left-0 h-px transition-all duration-300 ${
+                      active === link.label
+                        ? "w-full bg-[#7B68EE]"
+                        : "w-0 group-hover:w-full bg-[#7B68EE]"
                     }`}
                   />
                 </a>
@@ -78,7 +80,7 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* Social Links */}
+          {/* Social Links — siempre visibles */}
           <div className="flex items-center gap-3 sm:gap-4 flex-shrink-0">
             {socialLinks.map((s) => (
               <a
@@ -87,9 +89,9 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={s.label}
-                className="text-white/40 hover:text-[#a0e0c0] transition-all duration-300 hover:scale-110"
+                className="text-white/40 hover:text-[#7B68EE] transition-all duration-300 hover:scale-110"
               >
-                
+                {/* Íconos más chicos en mobile */}
                 <span className="block scale-90 sm:scale-100">{s.icon}</span>
               </a>
             ))}
